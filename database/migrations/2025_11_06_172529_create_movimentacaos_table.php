@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('movimentacaos', function (Blueprint $table) {
             $table->id();
             $table->string('produto_id')->nullable(false);
-            $table->string('tipo')->nullable(false);
+            $table->enum('tipo', ['entrada', 'saida'])->nullable(false);
             $table->integer('quantidade')->nullable(false);
             $table->dateTime('data_movimentacao')->nullable(false);
             $table->timestamps();

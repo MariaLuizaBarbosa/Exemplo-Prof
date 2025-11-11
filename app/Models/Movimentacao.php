@@ -14,5 +14,7 @@ class Movimentacao extends Model
         'data_movimentacao'
     ];
 
-    use HasFactory;
+    public function produto(){
+        return $this->belongsTo(Produto::class, 'id');
+    }
 }

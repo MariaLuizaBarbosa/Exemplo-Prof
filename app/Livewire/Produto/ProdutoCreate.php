@@ -8,7 +8,9 @@ use Livewire\Component;
 class ProdutoCreate extends Component
 {
     public $nome;
+    public $descricao;
     public $quantidade;
+    public $quantidade_minima;
     public $preco;
 
     protected $rules = [
@@ -28,7 +30,9 @@ class ProdutoCreate extends Component
 
         Produto::create([
             'nome' => $this->nome,
+            'descricao' => $this->descricao,
             'quantidade' => $this->quantidade,
+            'quantidade_minima' => $this->quantidade_minima,
             'preco' => $this->preco
         ]);
         session()->flash('success', 'Cadastrado');
